@@ -2,32 +2,35 @@ import java.util.Scanner;
 
 public class UserInput {
 	public Scanner sc = new Scanner(System.in);
-	public int northSouthVector = 0;
-	public int eastWestVector = 0;
 
 	public int movePlayer() {
 		String direction = sc.nextLine();
 		boolean expectingInput = true;
+		int northSouthVector = 0;
+		int eastWestVector = 0;
 
 		while(expectingInput) {
-			switch(direction):
+			switch(direction) {
 				case "n": case "north":
 					return northSouthVector = -1;
-					break;
+					//break;
 				case "s": case "south": case "down":
 					return northSouthVector = 1;
-					break;
-				case "w": case "west": case "left": r
+					//break;
+				case "w": case "west": case "left":
 					return eastWestVector = -1;
-					break;
+					//break;
 				case "e": case "east": case "right":
 					return eastWestVector = 1;
-					break;
+				//	break;
 				default:
 					return 0;
+			}
 		}
+		return northSouthVector; return eastWestVector;
 	}
 
+	//if user inputs look, print out a set of statements
 	public void look() {
 		String look = sc.nextLine();
 		if (look.equals("look")) {
@@ -40,11 +43,12 @@ public class UserInput {
 			System.out.println("The dial reads" + " distance " + "Xmiles");
 		}
 	}
-	public void compass() {
-		String compass = sc.nextLine() {
+	//if user inputs compass, return the result of the magicCompass method from Player object
+	public void compass(float distance) {
+		String compass = sc.nextLine();
 			if (compass.equals("compass")) {
-				System.out.println(magicCompass() + "m");
+				System.out.println(distance + "m");
+				//want to use method magicCompass from Player object instead of "using compass"
 			}
- 		}
-	}
+ 	}
 }

@@ -2,27 +2,26 @@ import java.util.Scanner;
 public class Player {
 
 	Scanner sc = new Scanner(System.in);
-	public int playerIcon = 666;
-	public int startColumn = swamp.length/2;
-	public int startRow = swamp[startColumn]/2;
+	public int playerIcon = 1;
 	public int currentColumn;
 	public int currentRow;
 
 
+	//calculates distance between player and treasure using pythagoras' theorem
 	public float magicCompass() {
-		int verticalDistance = (treasureColumn - currentColumn);
-		int horizontalDistance (treasureRow - currentRow);
+		int verticalDistance = (4 - currentColumn);
+		int horizontalDistance = (4 - currentRow);
 		float hypotenuseSquared = (float) (verticalDistance*verticalDistance) + (horizontalDistance*horizontalDistance);
-		return float hyptoenuse = (float)sqrt(hypotenuseSquared);
+		float hypotenuse = (float)Math.sqrt(hypotenuseSquared);
+		return hypotenuse;
 	}
 
-	public int startPosition() {
-		return swamp[startColumn][startRow];
+	public void startPosition(int[][] greySwamp) {
 	}
 
-	public void updateStartPosition(movePlayer()) {
-		currentColumn = startColumn + northSouthVector;
-		currentRow = startRow + eastWestVector;
+	public void updateStartPosition(int upDown, int leftRight, int xAxis, int yAxis) {
+		currentColumn = xAxis+ upDown;
+		currentRow = yAxis + leftRight;
 	}
 
 	public int updatePosition(int vector) {
