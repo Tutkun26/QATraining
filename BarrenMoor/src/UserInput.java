@@ -1,33 +1,33 @@
 import java.util.Scanner;
 
 public class UserInput {
-	private Scanner sc = new Scanner(System.in);
-	
-	
-	public void moveInput() {
-		String direction = sc.nextLine(); 
+	public Scanner sc = new Scanner(System.in);
+	public int northSouthVector = 0;
+	public int eastWestVector = 0;
+
+	public int movePlayer() {
+		String direction = sc.nextLine();
 		boolean expectingInput = true;
-		
+
 		while(expectingInput) {
-			if (direction.equals("north")) {
-				System.out.println("moving north");
-				direction = sc.nextLine();
-			}
-			else if (direction.equals("south")) {
-				System.out.println("moving south");
-				direction = sc.nextLine();
-			}
-			else if (direction.equals("east")) {
-				System.out.println("moving east");
-				direction = sc.nextLine();
-			}
-			else if (direction.equals("west")) {
-				System.out.println("moving west");
-				direction = sc.nextLine();
-			}
-			else {};
+			switch(direction):
+				case "n": case "north":
+					return northSouthVector = -1;
+					break;
+				case "s": case "south": case "down":
+					return northSouthVector = 1;
+					break;
+				case "w": case "west": case "left": r
+					return eastWestVector = -1;
+					break;
+				case "e": case "east": case "right":
+					return eastWestVector = 1;
+					break;
+				default:
+					return 0;
 		}
 	}
+
 	public void look() {
 		String look = sc.nextLine();
 		if (look.equals("look")) {
@@ -39,5 +39,12 @@ public class UserInput {
 			System.out.println("It has hands like a watch but the hands don't seem to tell time.");
 			System.out.println("The dial reads" + " distance " + "Xmiles");
 		}
+	}
+	public void compass() {
+		String compass = sc.nextLine() {
+			if (compass.equals("compass")) {
+				System.out.println(magicCompass() + "m");
+			}
+ 		}
 	}
 }

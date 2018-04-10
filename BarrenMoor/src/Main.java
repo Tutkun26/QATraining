@@ -1,16 +1,18 @@
 
-public class Main {
+public class RunnerClass{
 
 	public static void main(String[] args) {
-		System.out.println("The adventure of barren moor");
-		
-		
-		InfiniteGreySwamp swamp = new InfiniteGreySwamp();
-	//	swamp.startPosition();
-	//	System.out.println(swamp.startPosition());
 
-		UserInput jack = new UserInput();
-		jack.moveInput();
+		//create empty grid for the swamp
+		public int swamp[][]= new int[10][10];
+
+		GreySwamp swamp = new GreySwamp();
+		Player one = new Player();
+		UserInput input = new UserInput();
+
+		while(swamp[one.currentColumn][one.currentRow].equals("666")) {
+			input.movePlayer();
+		}
 	}
 
 }
